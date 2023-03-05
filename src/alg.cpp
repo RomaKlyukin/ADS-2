@@ -4,8 +4,8 @@
 
 
 double pown(double value, uint16_t n) {
-  long double stepen = 1;
-  for (uint64_t i = 1; i <= n; i++) {
+  double stepen = 1;
+  for (uint16_t i = 1; i <= n; ++i) {
     stepen = stepen * value;
   }
   return stepen;
@@ -13,7 +13,7 @@ double pown(double value, uint16_t n) {
 
 uint64_t fact(uint16_t n) {
   uint64_t fact = 1;
-  for (uint64_t i = 1; i <= n; i++) {
+  for (uint16_t i = 1; i <= n; i++) {
     fact = i * fact;
   }
   return fact;
@@ -41,7 +41,7 @@ double sinn(double x, uint16_t count) {
 
 double cosn(double x, uint16_t count) {
   double cosf = 0;
-  for (uint64_t i = 1; i <= count; i++) {
+  for (uint16_t i = 1; i <= count; ++i) {
     cosf = cosf + (pown(-1, i - 1) * pown(x, (2 * i) - 2) / fact((2 * i) - 2));
   }
   return cosf;
